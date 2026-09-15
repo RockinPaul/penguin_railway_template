@@ -57,10 +57,12 @@ add a key from the Models page after signing in, and it is stored on the volume.
 
 ### Deployment Dependencies
 
-- Upstream project: <https://github.com/Prism-Shadow/penguin-harness> (Apache-2.0), image
-  `hiyouga/penguinharness:0.2.11`.
-- Upstream documentation: <https://penguin.ooo/docs/>.
-- Template source: <https://github.com/RockinPaul/penguin_railway_template> (MIT).
+- Upstream project: [Prism-Shadow/penguin-harness](https://github.com/Prism-Shadow/penguin-harness)
+  (Apache-2.0), image `hiyouga/penguinharness:0.2.11`.
+- Upstream documentation: [penguin.ooo/docs](https://penguin.ooo/docs/).
+- Template source:
+  [RockinPaul/penguin_railway_template](https://github.com/RockinPaul/penguin_railway_template)
+  (MIT).
 
 ### Implementation Details
 
