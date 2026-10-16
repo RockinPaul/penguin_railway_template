@@ -11,7 +11,7 @@
 # PENGUIN_SEED_ADMIN_PASSWORD the server mints a first-login link and prints it
 # to the container log, which is a reasonable default on a laptop and a poor one
 # on a URL anybody can reach.
-ARG PENGUIN_VERSION=0.2.11
+ARG PENGUIN_VERSION=0.2.16
 FROM hiyouga/penguinharness:${PENGUIN_VERSION}
 
 USER root

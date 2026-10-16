@@ -10,7 +10,7 @@ whole data root on a volume, behind an admin password generated for your deploym
 
 | Service | Base | Public | Role |
 |---|---|---|---|
-| `penguin` | `hiyouga/penguinharness:0.2.11` | **yes** | The whole platform: web app, agent runtime, projects, terminals, traces. |
+| `penguin` | `hiyouga/penguinharness:0.2.16` | **yes** | The whole platform: web app, agent runtime, projects, terminals, traces. |
 
 One service, one volume, no sidecar. The image is upstream's own, unmodified apart from the
 environment and a guard in front of its entrypoint.
@@ -57,7 +57,8 @@ Measured against a running instance, not taken from the docs:
   throttled per username with an exponentially growing delay, applied to unknown usernames too, so
   the endpoint is not a user-existence oracle.
 - The session cookie comes back `HttpOnly; Secure; SameSite=Lax` with a 30-day lifetime.
-- `/api/auth/claim` returns **401** with no token and with a wrong one.
+- `/api/auth/claim` with no token or a wrong one sets no session: since 0.2.13 it redirects to the
+  login page (`302` to `/login?claimFailed=…`) where 0.2.11 answered 401.
 - Upstream hashes the password with scrypt and rejects a short one *before* any insert, so a
   configuration typo cannot create a weak privileged account.
 
