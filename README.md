@@ -10,7 +10,7 @@ whole data root on a volume, behind an admin password generated for your deploym
 
 | Service | Base | Public | Role |
 |---|---|---|---|
-| `penguin` | `hiyouga/penguinharness:0.2.16` | **yes** | The whole platform: web app, agent runtime, projects, terminals, traces. |
+| `penguin` | `hiyouga/penguinharness:0.2.18` | **yes** | The whole platform: web app, agent runtime, projects, terminals, traces. |
 
 One service, one volume, no sidecar. The image is upstream's own, unmodified apart from the
 environment and a guard in front of its entrypoint.

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-02 — PenguinHarness 0.2.18
+
+- `PENGUIN_VERSION` 0.2.16 → 0.2.18 (`hiyouga/penguinharness:0.2.18`). The wrapper is unchanged.
+- **Security fixes:** behind a trusted proxy (this template sets `PENGUIN_TRUST_PROXY=1`) the origin check compares `Origin` with the forwarded scheme on the raw `Host`, accepts only single-value forwarded headers, and refuses a write or socket handshake whose `Sec-Fetch-Site` is not `same-origin`; a write must come from the app's own pages; 95 dependency alerts closed (MCP SDK, hono, body-parser, zod).
+- The API socket moved from the terminal stream address to `GET /api/socket`. The web app uses the new address; only a custom client that opened the old one needs changing.
+- Settled schedule tasks are archived into `schedule/expired/`.
+
+### Upgrading an existing deployment
+
+Back up the volume first. A browser on a different origin than the service's domain can no longer write; use the Railway domain or a custom domain attached to this service.
+
 ## 2026-10-16 — PenguinHarness 0.2.16
 
 - `PENGUIN_VERSION` 0.2.11 → 0.2.16 (`hiyouga/penguinharness:0.2.16`). The wrapper is unchanged: upstream's entrypoint, user and data root are the same.
